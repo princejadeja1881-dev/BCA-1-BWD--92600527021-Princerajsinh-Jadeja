@@ -3,16 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
+    <title>Login</title>
+    <link rel="stylesheet" href="css.css">
 </head>
 <body>
-    <center><p><b><h1>login</h1></b></p></center>
-    <center>
-        E:mail : <input type="text" name="username"/> <br><br>
-        PASSWORD : <input type="PASSWORD" name="PASSWORD"/><br><br>
-        <a href="registration.html">registration</a>
-    </center>
-
-    
+    <div class="login">
+        <h1>Login</h1>
+        <form>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <br><br>
+            <button type="submit">Login</button>
+            <br><br>
+            <a href="forgot.html">forgot password</a>
+            <br><br>
+            <a href="reg.html">Registration</a>
+        </form>
+    </div>
 </body>
 </html>
