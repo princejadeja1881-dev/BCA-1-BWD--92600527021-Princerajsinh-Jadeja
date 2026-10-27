@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Checking Program</title>
+</head>
+<body>
+    <h2>Check Even/Odd and Prime Number</h2>
+
+    Enter a number:
+    <input type="number" id="num">
+
+    <button onclick="checkNumber()">Check</button>
+
+    <p id="result"></p>
+
+    <script>
+        function checkNumber() {
+            let num = Number(document.getElementById("num").value);
+            let result = "";
+
+            if (document.getElementById("num").value === "") {
+                document.getElementById("result").innerHTML =
+                    "Please enter a number.";
+                return;
+            }
+
+            // Check Even or Odd
+            if (num % 2 == 0) {
+                result += num + " is Even.<br>";
+            } else {
+                result += num + " is Odd.<br>";
+            }
+
+            // Check Prime or Not Prime
+            if (num <= 1 || !Number.isInteger(num)) {
+                result += num + " is Not Prime.";
+            } else {
+                let prime = true;
+
+                for (let i = 2; i <= Math.sqrt(num); i++) {
+                    if (num % i == 0) {
+                        prime = false;
+                        break;
+                    }
+                }
+
+                if (prime) {
+                    result += num + " is Prime.";
+                } else {
+                    result += num + " is Not Prime.";
+                }
+            }
+
+            document.getElementById("result").innerHTML = result;
+        }
+    </script>
+</body>
+</html>
+
+</body>
+</html>
