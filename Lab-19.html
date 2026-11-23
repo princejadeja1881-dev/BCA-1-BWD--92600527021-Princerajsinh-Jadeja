@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JavaScript Mouse Events with Alert</title>
+  <style>
+    #box {
+      width: 300px;
+      height: 180px;
+      margin: 50px auto;
+      background-color: #2563eb;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border-radius: 10px;
+      font-family: sans-serif;
+      user-select: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="box">Interact with this box</div>
+
+  <script>
+    const box = document.getElementById("box");
+
+    box.addEventListener("click", (e) => {
+      alert(`Event: click | Button: ${e.button}`);
+    });
+    box.addEventListener("dblclick", () => {
+      alert("Event: dblclick (Double Click)");
+    });
+
+    box.addEventListener("mousedown", (e) => {
+      alert(`Event: mousedown | Button: ${e.button}`);
+    });
+
+    box.addEventListener("mouseup", (e) => {
+      alert(`Event: mouseup | Button: ${e.button}`);
+    });
+
+    box.addEventListener("mouseenter", () => {
+      alert("Event: mouseenter");
+    });
+    box.addEventListener("mouseleave", () => {
+      alert("Event: mouseleave");
+    });
+
+    box.addEventListener("mousemove", (e) => {
+      alert(`Event: mousemove at (${e.clientX}, ${e.clientY})`);
+    });
+
+    box.addEventListener("mouseover", () => {
+      alert("Event: mouseover");
+    });
+
+    
+    box.addEventListener("mouseout", () => {
+      alert("Event: mouseout");
+    });
+
+    
+    box.addEventListener("contextmenu", (e) => {
+      e.preventDefault(); 
+      alert("Event: contextmenu (Right Click)");
+    });
+
+    box.addEventListener("wheel", (e) => {
+      alert(`Event: wheel | deltaY: ${e.deltaY}`);
+    });
+  </script>
+</body>
+</html>
